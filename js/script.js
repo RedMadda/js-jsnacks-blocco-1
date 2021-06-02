@@ -52,20 +52,19 @@
 
 // 4) In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby
 
-var invitati = ["Pippo", "Paperina", "Pluto", "Minni", "Clarabella", "Nonna Papera"];
+var invitati = ["Pippo", "Paperina", "Pluto", "Minni", "Clarabella", "Nonna",  "Papera"];
 // chiedi all’utente il suo nome 
 var nomeUtente = prompt("Inserisci il tuo nome, per favore.");
 nomeUtente = nomeUtente.charAt(0).toUpperCase() + nomeUtente.substr(1).toLowerCase();
-// e comunicagli se può partecipare o no alla festa.
-var presente = true;
-var i = 0;
-while(i < invitati.lenght){
+// e comunicagli se può partecipare o no alla festa
+for (i = 0; i < invitati.length; i++){
     if(invitati[i] == nomeUtente){
-        console.log("presente");
+        document.getElementById("stampa3").innerHTML = " presente!";
+        break;
     } else {
-        console.log("non presente");
+        document.getElementById("stampa3").innerHTML = " non sei presente!";
+        break;
     }
-    i++
 }
 
 // for(var i = 0; i < nomi.length; i++){
