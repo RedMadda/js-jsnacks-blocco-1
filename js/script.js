@@ -56,12 +56,14 @@ var invitati = ["Pippo", "Paperina", "Pluto", "Minni", "Clarabella", "Nonna",  "
 var nomeUtente = prompt("Inserisci il tuo nome, per favore.");
 nomeUtente = nomeUtente.charAt(0).toUpperCase() + nomeUtente.substr(1).toLowerCase();
 // e comunicagli se può partecipare o no alla festa
-for (i = 0; i < invitati.length; i++){
+var presente = true;
+for (var i = 0; i < invitati.length && presente == true; i++){
     if(invitati[i] == nomeUtente){
         document.getElementById("stampa3").innerHTML += " presente!";
-        break;
+        presente = false;
     } else {
         document.getElementById("stampa3").innerHTML += " non sei presente!";
-        break;
+        presente = false;
+
     }
 }
