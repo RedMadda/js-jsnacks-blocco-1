@@ -38,14 +38,14 @@
      }
  }
 
- var i = 0;
- while( i < 6){
- var n = parseInt(prompt("Inserisci un numero."));
-     if(n % 2 != 0){
-      numeriDisp.push(n);
-     }
-     i++
- }
+//  var i = 0;
+//  while( i < 6){
+//  var n = parseInt(prompt("Inserisci un numero."));
+//      if(n % 2 != 0){
+//       numeriDisp.push(n);
+//      }
+//      i++
+//  }
 
  document.getElementById("stampa2").innerHTML += " " + numeriDisp;
 
@@ -56,14 +56,10 @@ var invitati = ["Pippo", "Paperina", "Pluto", "Minni", "Clarabella", "Nonna",  "
 var nomeUtente = prompt("Inserisci il tuo nome, per favore.");
 nomeUtente = nomeUtente.charAt(0).toUpperCase() + nomeUtente.substr(1).toLowerCase();
 // e comunicagli se può partecipare o no alla festa
-var presente = true;
-for (var i = 0; i < invitati.length && presente == true; i++){
+var check = "nonPresente";
+for (var i = 0; i < invitati.length && check == "nonPresente"; i++){
     if(invitati[i] == nomeUtente){
-        document.getElementById("stampa3").innerHTML += " presente!";
-        presente = false;
-    } else {
-        document.getElementById("stampa3").innerHTML += " non sei presente!";
-        presente = false;
-
+        check = "presente";        
     }
 }
+document.getElementById("stampa3").innerHTML += " " + check;
